@@ -17,12 +17,13 @@ SPACE_ROOT=$(df -h / | awk '/^\/dev/{print $2}')
 SPACE_ROOT_USED=$(df -h / | awk '/^\/dev/{print $3}')
 SPACE_ROOT_FREE=$(df -h / | awk '/^\/dev/{print $4}')
 
+COLOR_BACK1=$(getBgrClr $1)
+COLOR_FONT1=$(getFontClr $2)
+COLOR_BACK2=$(getBgrClr $3)
+COLOR_FONT2=$(getFontClr $4)
+COLOR_DEFAULT="\033[0m"
+
 function getInfo {
-    COLOR_BACK1=$(getBgrClr $1)
-    COLOR_FONT1=$(getFontClr $2)
-    COLOR_BACK2=$(getBgrClr $3)
-    COLOR_FONT2=$(getFontClr $4)
-    COLOR_DEFAULT="\033[0m"
     echo -e "${COLOR_BACK1}${COLOR_FONT1}HOSTNAME = ${COLOR_BACK2}${COLOR_FONT2}$HOSTNAME${NORMAL}${COLOR_DEFAULT}"
     echo -e "${COLOR_BACK1}${COLOR_FONT1}TIMEZONE = ${COLOR_BACK2}${COLOR_FONT2}$TIMEZONE${NORMAL}${COLOR_DEFAULT}"
     echo -e "${COLOR_BACK1}${COLOR_FONT1}USER = ${COLOR_BACK2}${COLOR_FONT2}$USER${COLOR_DEFAULT}"
