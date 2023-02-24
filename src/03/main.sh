@@ -4,9 +4,9 @@
 . ./validator.sh
 
 if [[ $# -eq 4 ]]; then
-    isValidArguments $1 $2 $3 $4
+    checkArgs $1 $2 $3 $4
     if [[ $? -eq 0 ]]; then
-        isValidColors $1 $2 $3 $4
+        checkClr $1 $2 $3 $4
         if [[ $? -eq 0 ]]; then
             echo "$(getInfo $1 $2 $3 $4)"
         else

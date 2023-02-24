@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function isValidArguments {
+function checkArgs {
     if [[ $1 =~ ^[1-6]$ && $2 =~ ^[1-6]$ && $3 =~ ^[1-6]$ && $4 =~ ^[1-6]$ ]]; then
         return 0
     else
@@ -8,7 +8,7 @@ function isValidArguments {
     fi
 }
 
-function isValidColors {
+function checkClr {
     if [[ $1 != $2 && $3 != $4 ]]; then
         return 0
     else

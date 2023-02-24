@@ -41,18 +41,26 @@ function getInfo {
     echo -e "${COLOR_BACK1}${COLOR_FONT1}SPACE_ROOT_FREE = ${COLOR_BACK2}${COLOR_FONT2}$SPACE_ROOT_FREE${COLOR_DEFAULT}"
 }
 
+function askUserYorN {
+    if [[ $1 == "y" || $1 == "Y" ]]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 function getBgrClr {
     if [[ $1 == 1 ]]; then
         echo "\033[47m"
-        elif [[ $1 == 2 ]]; then
+    elif [[ $1 == 2 ]]; then
         echo "\033[41m"
-        elif [[ $1 == 3 ]]; then
+    elif [[ $1 == 3 ]]; then
         echo "\033[42m"
-        elif [[ $1 == 4 ]]; then
+    elif [[ $1 == 4 ]]; then
         echo "\033[44m"
-        elif [[ $1 == 5 ]]; then
+    elif [[ $1 == 5 ]]; then
         echo "\033[45m"
-        elif [[ $1 == 6 ]]; then
+    elif [[ $1 == 6 ]]; then
         echo "\033[40m"
     fi
 }
@@ -60,23 +68,15 @@ function getBgrClr {
 function getFontClr {
     if [[ $1 == 1 ]]; then
         echo "\033[37m"
-        elif [[ $1 == 2 ]]; then
+    elif [[ $1 == 2 ]]; then
         echo "\033[31m"
-        elif [[ $1 == 3 ]]; then
+    elif [[ $1 == 3 ]]; then
         echo "\033[32m"
-        elif [[ $1 == 4 ]]; then
+    elif [[ $1 == 4 ]]; then
         echo "\033[34m"
-        elif [[ $1 == 5 ]]; then
+    elif [[ $1 == 5 ]]; then
         echo "\033[35m"
-        elif [[ $1 == 6 ]]; then
+    elif [[ $1 == 6 ]]; then
         echo "\033[30m"
-    fi
-}
-
-function askUserYorN {
-    if [[ $1 == "y" || $1 == "Y" ]]; then
-        return 0
-    else
-        return 1
     fi
 }
